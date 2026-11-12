@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SKILLBRIDGE | Connect People. Find Opportunities.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+
+            <h1 class="logo">SKILL<span>BRIDGE</span></h1>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Explore Projects</a>
+                <a href="#post">Post Project</a>
+            </div>
+
+            <button class="nav-button" onclick="showProfile()">
+                My Profile
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- HOME SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tagline">WELCOME TO SKILLBRIDGE</p>
+
+            <h1>
+                Connect People.<br>
+                Find Opportunities.<br>
+                <span>Complete Projects.</span>
+            </h1>
+
+            <p class="hero-description">
+                Have an idea but need a team?
+                Have skills but need opportunities?
+
+                SKILLBRIDGE connects people to work together
+                and turn ideas into reality.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="primary-button">
+                    Explore Projects
+                </a>
+
+                <a href="#post" class="secondary-button">
+                    Post a Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+
+        <p class="section-label">WHAT WE DO</p>
+
+        <h2>One Platform. Many Possibilities.</h2>
+
+        <p class="about-text">
+            SKILLBRIDGE is a platform where people with ideas
+            connect with people who have the skills to make
+            those ideas happen.
+
+            Whether it is a college project, startup, film,
+            animation, business or any other activity,
+            find the right people and build together.
+        </p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>🤝 Free Collaboration</h3>
+                <p>
+                    Work together voluntarily to learn,
+                    gain experience, build portfolios
+                    and complete projects.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💼 Paid Work & Employment</h3>
+                <p>
+                    Find paid project opportunities,
+                    freelance work and employment.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌍 Multiple Industries</h3>
+                <p>
+                    Explore opportunities in films,
+                    startups, education, business,
+                    construction and more.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECT POSTING SECTION -->
+    <section class="post-section section" id="post">
+
+        <p class="section-label">START SOMETHING NEW</p>
+
+        <h2>Post Your Project</h2>
+
+        <p class="subtitle">
+            Share your idea and find people who can help.
+        </p>
+
+        <form id="projectForm">
+
+            <input
+                type="text"
+                id="projectTitle"
+                placeholder="Project Title"
+                required
+            >
+
+            <textarea
+                id="projectDescription"
+                placeholder="Describe your project..."
+                required
+            ></textarea>
+
+            <input
+                type="text"
+                id="projectSkills"
+                placeholder="Required Skills (Example: Java, Editing, Design)"
+                required
+            >
+
+            <select id="projectCategory" required>
+
+                <option value="">Select Collaboration Type</option>
+
+                <option value="Free Collaboration">
+                    Free Collaboration
+                </option>
+
+                <option value="Paid Work & Employment">
+                    Paid Work & Employment
+                </option>
+
+            </select>
+
+            <input
+                type="text"
+                id="projectLocation"
+                placeholder="Location (Example: Remote / Hyderabad)"
+                required
+            >
+
+            <button type="submit" class="primary-button full-button">
+                Publish Project
+            </button>
+
+        </form>
+
+        <p id="formMessage"></p>
+
+    </section>
+
+
+    <!-- EXPLORE PROJECTS -->
+    <section class="projects-section section" id="projects">
+
+        <p class="section-label">FIND YOUR OPPORTUNITY</p>
+
+        <h2>Explore Projects</h2>
+
+        <p class="subtitle">
+            Discover projects and become part of a team.
+        </p>
+
+        <input
+            type="text"
+            id="searchInput"
+            class="search-box"
+            placeholder="Search projects or skills..."
+        >
+
+        <div class="filter-buttons">
+
+            <button onclick="filterProjects('All')">
+                All
+            </button>
+
+            <button onclick="filterProjects('Free Collaboration')">
+                Free Collaboration
+            </button>
+
+            <button onclick="filterProjects('Paid Work & Employment')">
+                Paid Work & Employment
+            </button>
+
+        </div>
+
+        <div id="projectList" class="project-grid"></div>
+
+    </section>
+
+
+    <!-- PROFILE SECTION -->
+    <section class="profile-section section" id="profile">
+
+        <p class="section-label">YOUR SPACE</p>
+
+        <h2>Create Your Profile</h2>
+
+        <form id="profileForm">
+
+            <input
+                type="text"
+                id="userName"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="userSkills"
+                placeholder="Your Skills"
+                required
+            >
+
+            <input
+                type="text"
+                id="userInterests"
+                placeholder="Your Interests"
+                required
+            >
+
+            <button type="submit" class="primary-button full-button">
+                Save Profile
+            </button>
+
+        </form>
+
+        <p id="profileMessage"></p>
+
+        <div id="profileDetails"></div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>SKILLBRIDGE</h2>
+
+        <p>Connect People. Find Opportunities. Complete Projects.</p>
+
+        <p class="copyright">
+            © 2026 SKILLBRIDGE | BYTE FORGE
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
